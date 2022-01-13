@@ -9,9 +9,9 @@ const Contract = ({ contract, columnNames }) => {
     <tr>
       {columnNames.map((column, index) => {
         for (let key of keys) {
-          if (column.toLowerCase() == key) {
+          if (column.toLowerCase() === key) {
             console.log(contract[key]);
-            if (key == "amount") {
+            if (key === "amount") {
               return <td key={index}>{`$ ${contract[key]}`}</td>;
             } else {
               return <td key={index}>{contract[key]}</td>;
