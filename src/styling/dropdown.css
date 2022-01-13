@@ -1,0 +1,10 @@
+.droplist-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.droplist-years {
+  height: 40px;
+  align-items: center;
+}
