@@ -26,7 +26,7 @@ const HorizontalTop = ({
 
   return (
     <div>
-      <h2>Outputs - Right Section Size: </h2>
+      <h2>Outputs - Left Section Size: </h2>
       <h4>{`${sizes}%`}</h4>
       <div className="droplist-menu">
         <select

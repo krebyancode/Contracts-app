@@ -23,7 +23,7 @@ const HorizontalBottom = ({ sizes, addContract }) => {
 
   return (
     <div>
-      <h2>Inputs - Left Section Size: </h2>
+      <h2>Inputs - Right Section Size: </h2>
       <h4>{`${sizes}%`}</h4>
       <form className="add-form" onSubmit={onSubmit}>
         <div className="form-control">
