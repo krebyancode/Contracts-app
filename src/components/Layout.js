@@ -9,7 +9,9 @@ const Layout = () => {
   const [sizeTop, setSizeTop] = useState(0);
   const [sizeBottom, setSizeBottom] = useState(0);
   const [contracts, setContracts] = useState(
-    JSON.parse(localStorage.getItem("contracts"))
+    localStorage.length === 0
+      ? []
+      : JSON.parse(localStorage.getItem("contracts"))
   );
   const [filteredContracts, setFilteredContracts] = useState([]);
   const divContainer = useRef(null);

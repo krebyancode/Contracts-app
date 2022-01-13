@@ -11,7 +11,7 @@ const HorizontalTop = ({
   filterContracts,
   columns,
 }) => {
-  const years = contracts?.map((contract) => {
+  const years = contracts.map((contract) => {
     return contract.year;
   });
   const yearsFiltered = years.filter((year, index) => {
