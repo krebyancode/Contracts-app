@@ -4,5 +4,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: whitesmoke;
+}
+
+.section {
+  padding: 0 1rem;
+  flex-direction: row;
+}
+
+.left {
+  background-color: lightcyan;
+}
+
+.right {
+  background-color: lightgoldenrodyellow;
 }

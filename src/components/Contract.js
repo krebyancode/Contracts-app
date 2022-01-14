@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styling/table.css";
+import "../styling/table.css";
 
 const Contract = ({ contract, columnNames }) => {
   // const { id, year, amount, type } = contract;

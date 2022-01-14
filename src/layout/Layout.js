@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../styling/layout.css";
-import "../styling/horizontal.css";
+import "../styling/verticalsplit.css";
 import Split from "react-split";
-import HorizontalTop from "./layout/horizontal/HorizontalTop";
-import HorizontalBottom from "./layout/horizontal/HorizontalBottom";
+import VerticalLeft from "./VerticalLeft";
+import VerticalRight from "./VerticalRight";
 
 const Layout = () => {
-  const [sizeTop, setSizeTop] = useState(0);
+  const [sizeLeft, setSizeLeft] = useState(0);
   const [sizeBottom, setSizeBottom] = useState(0);
   const [contracts, setContracts] = useState(
     localStorage.length === 0
@@ -18,10 +18,10 @@ const Layout = () => {
   const [columns, setColumns] = useState(["ID", "Year", "Amount", "Type"]);
 
   const checkSize = () => {
-    setSizeTop(
+    setSizeLeft(
       divContainer.current.parent.firstElementChild.style.width.substring(5, 7)
     );
-    setSizeBottom(100 - sizeTop);
+    setSizeBottom(100 - sizeLeft);
   };
 
   useEffect(() => {
@@ -51,14 +51,14 @@ const Layout = () => {
   return (
     <div className="container" onMouseMove={checkSize}>
       <Split className="split" ref={divContainer}>
-        <HorizontalTop
-          sizes={sizeTop}
+        <VerticalLeft
+          sizes={sizeLeft}
           filteredContracts={filteredContracts}
           filterContracts={filterContracts}
           contracts={contracts}
           columns={columns}
         />
-        <HorizontalBottom sizes={sizeBottom} addContract={addContract} />
+        <VerticalRight sizes={sizeBottom} addContract={addContract} />
       </Split>
     </div>
   );

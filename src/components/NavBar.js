@@ -1,7 +1,7 @@
 import React from "react";
 
-const NavBar = () => {
-  return <div className="navbar">EPİAŞ</div>;
+const Navbar = () => {
+  return <div className="navbar">Contracts App</div>;
 };
 
-export default NavBar;
+export default Navbar;

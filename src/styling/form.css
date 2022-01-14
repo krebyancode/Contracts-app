@@ -3,7 +3,6 @@ form {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: lightcyan;
 }
 
 .add-form {
@@ -24,11 +23,6 @@ form {
   margin: 5px 0;
   padding: 3px 7px;
   font-size: 17px;
-}
-
-footer {
-  margin-top: 30px;
-  text-align: center;
 }
 
 .btn {

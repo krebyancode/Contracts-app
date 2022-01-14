@@ -40,7 +40,7 @@ export default function MultipleSelectCheckmarks({
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 200 }}>
+      <FormControl sx={{ width: 200 }}>
         <InputLabel id="demo-multiple-checkbox-label">Columns</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -52,6 +52,7 @@ export default function MultipleSelectCheckmarks({
           renderValue={(selected) => selected.join(", ")}
           MenuProps={MenuProps}
         >
+          >
           {columns.map((column) => (
             <MenuItem key={column} value={column}>
               <Checkbox checked={columnList.indexOf(column) > -1} />
