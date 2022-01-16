@@ -7,8 +7,6 @@ const Form = ({ addContract, editedContract }) => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
 
-  console.log(editedContract);
-
   useEffect(() => {
     if (editedContract) {
       setId(editedContract.id);

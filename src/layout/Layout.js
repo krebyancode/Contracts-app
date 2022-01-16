@@ -5,23 +5,33 @@ import Split from "react-split";
 import VerticalLeft from "./VerticalLeft";
 import VerticalRight from "./VerticalRight";
 
+// columns over the table
 const columns = ["ID", "Year", "Amount", "Type", "Edit", "Delete"];
 
 const Layout = () => {
+  // section sizes (left & right)
   const [sizeLeft, setSizeLeft] = useState(0);
   const [sizeBottom, setSizeBottom] = useState(0);
+
+  // get contracts from local storage
   const [contracts, setContracts] = useState(
     localStorage.length === 0
       ? []
       : JSON.parse(localStorage.getItem("contracts"))
   );
+  // filtered contracts to send the table
   const [filteredContracts, setFilteredContracts] = useState([]);
+
   const divContainer = useRef(null);
+
+  // to change layout display on the left section
   const [styleMenu, setStyleMenu] = useState(false);
+  // states to define edited contract
   const [editedContract, setEditedContract] = useState("");
   const [editedContractID, setEditedContractID] = useState("");
 
   const checkSize = () => {
+    // if left section size below 42%, layout will change to display better.
     if (
       divContainer.current.parent.firstElementChild.style.width.substring(
         5,
@@ -39,14 +49,14 @@ const Layout = () => {
   };
 
   useEffect(() => {
+    // any time contracts list change, filtered contracts restated and stored to local storage.
     checkSize();
     setFilteredContracts(contracts);
     localStorage.setItem("contracts", JSON.stringify(contracts));
   }, [contracts]);
 
-  console.log(editedContract);
-
   const addContract = (newContract) => {
+    // if there is a contract to be edited, edit option is activated. Otherwise, new contract is added to contracts list.
     if (!editedContractID) {
       const addNewContract = { ...newContract };
       setContracts([...contracts, addNewContract]);
@@ -81,6 +91,7 @@ const Layout = () => {
   };
 
   const filterContracts = (year) => {
+    // send as a prop to filter selected years
     if (year === "all") {
       setFilteredContracts(contracts);
     } else {

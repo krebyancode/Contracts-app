@@ -15,6 +15,7 @@ const VerticalLeft = ({
   deleteContract,
   editContract,
 }) => {
+  // to set dropdown list of current contracts' years
   const years = contracts.map((contract) => {
     return contract.year;
   });
@@ -24,6 +25,7 @@ const VerticalLeft = ({
 
   const [columnNames, setColumnNames] = useState(columns);
 
+  // column names are sent to checkbox as prop
   const arrangeColumnNames = (cols) => {
     setColumnNames(cols);
   };

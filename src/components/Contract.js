@@ -13,6 +13,7 @@ const Contract = ({ contract, columnNames, editContract, deleteContract }) => {
   };
 
   return (
+    // table rows are set here, as per the sorting of columns.
     <tr>
       {columnNames.map((column, index) => {
         for (let key of keys) {
