@@ -1,5 +1,6 @@
 import React from "react";
 import githubLogo from "../assets/githubLogo.svg";
+import "../styling/table.css";
 
 const Navbar = () => {
   return (
