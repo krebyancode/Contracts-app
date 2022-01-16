@@ -20,18 +20,13 @@ export default function MultipleSelectCheckmarks({
   columns,
   arrangeColumnNames,
 }) {
-  // const [checked, setChecked] = useState(false);
-
   const [columnList, setColumnList] = useState(columns);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setColumnList(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    setColumnList(typeof value === "string" ? value.split(",") : value);
   };
 
   useEffect(() => {
@@ -40,7 +35,7 @@ export default function MultipleSelectCheckmarks({
 
   return (
     <div>
-      <FormControl sx={{ width: 200 }}>
+      <FormControl sx={{ m: 1, width: 200 }}>
         <InputLabel id="demo-multiple-checkbox-label">Columns</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
@@ -52,7 +47,6 @@ export default function MultipleSelectCheckmarks({
           renderValue={(selected) => selected.join(", ")}
           MenuProps={MenuProps}
         >
-          >
           {columns.map((column) => (
             <MenuItem key={column} value={column}>
               <Checkbox checked={columnList.indexOf(column) > -1} />

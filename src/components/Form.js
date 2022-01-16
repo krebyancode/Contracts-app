@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/form.css";
 
-const Form = ({ addContract }) => {
+const Form = ({ addContract, editedContract }) => {
   const [id, setId] = useState("");
   const [year, setYear] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("");
+
+  console.log(editedContract);
+
+  useEffect(() => {
+    if (editedContract) {
+      setId(editedContract.id);
+      setYear(editedContract.year);
+      setAmount(editedContract.amount);
+      setType(editedContract.type);
+    }
+  }, [editedContract]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +57,9 @@ const Form = ({ addContract }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="proposal">Contract Amount:</label>
+        <label htmlFor="proposal">
+          Contract Amount <i>(in USD)</i>:
+        </label>
         <input
           id="amount"
           name="amount"

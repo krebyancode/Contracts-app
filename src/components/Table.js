@@ -2,7 +2,12 @@ import React from "react";
 import Contract from "./Contract";
 import "../styling/table.css";
 
-const Table = ({ columnNames, filteredContracts }) => {
+const Table = ({
+  columnNames,
+  filteredContracts,
+  deleteContract,
+  editContract,
+}) => {
   return (
     <table>
       <thead>
@@ -18,6 +23,8 @@ const Table = ({ columnNames, filteredContracts }) => {
             key={contract.id}
             contract={contract}
             columnNames={columnNames}
+            deleteContract={deleteContract}
+            editContract={editContract}
           />
         ))}
       </tbody>

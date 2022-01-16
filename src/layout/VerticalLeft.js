@@ -11,6 +11,9 @@ const VerticalLeft = ({
   filteredContracts,
   filterContracts,
   columns,
+  styleMenu,
+  deleteContract,
+  editContract,
 }) => {
   const years = contracts.map((contract) => {
     return contract.year;
@@ -27,9 +30,14 @@ const VerticalLeft = ({
 
   return (
     <div className="section left">
-      <h2>Outputs - Left Section Size: </h2>
-      <h4>{`${sizes}%`}</h4>
-      <div className="table-menu">
+      <h2>Contracts Table</h2>
+      <h4>{`Section Size: ${sizes}%`}</h4>
+      <div
+        className="table-menu"
+        style={
+          styleMenu ? { flexDirection: "column" } : { flexDirection: "row" }
+        }
+      >
         <Select
           filterContracts={filterContracts}
           yearsFiltered={yearsFiltered}
@@ -37,6 +45,8 @@ const VerticalLeft = ({
         <Table
           columnNames={columnNames}
           filteredContracts={filteredContracts}
+          deleteContract={deleteContract}
+          editContract={editContract}
         />
         <Checkbox columns={columns} arrangeColumnNames={arrangeColumnNames} />
       </div>

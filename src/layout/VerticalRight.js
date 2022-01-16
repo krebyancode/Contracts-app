@@ -2,12 +2,12 @@ import React from "react";
 import Form from "../components/Form";
 import "../styling/layout.css";
 
-const VerticalRight = ({ sizes, addContract }) => {
+const VerticalRight = ({ sizes, addContract, editedContract }) => {
   return (
     <div className="section right">
-      <h2>Inputs - Right Section Size: </h2>
-      <h4>{`${sizes}%`}</h4>
-      <Form addContract={addContract} />
+      <h2>Contracts Form</h2>
+      <h4>{`Section Size: ${sizes}%`}</h4>
+      <Form addContract={addContract} editedContract={editedContract} />
     </div>
   );
 };

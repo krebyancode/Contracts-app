@@ -1,7 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 .navbar {
   height: 60px;
-  background-color: blue;
+  background-color: rgb(10, 10, 197);
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+code {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1em;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 30px;
+  vertical-align: bottom;
+  margin-right: 1rem;
 }

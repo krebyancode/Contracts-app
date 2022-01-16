@@ -9,7 +9,7 @@ export default function BasicSelect({ filterContracts, yearsFiltered }) {
   const [year, setYear] = useState("all");
 
   return (
-    <Box sx={{ minWidth: 100 }}>
+    <Box sx={{ m: 1, minWidth: 100 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Year</InputLabel>
         <Select
